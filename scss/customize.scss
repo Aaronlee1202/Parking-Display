@@ -1,0 +1,51 @@
+// scss-docs-start color-variables
+$pretso-blue:  #14cbf3 !default;
+$gradient:     #06EBFB !default;
+$pretso-orange:#F69234 !default;
+$normal-green: #35E1B8 !default;
+$error-red:    #F55D78 !default;
+$bg-grey:      #EEEFF1 !default;
+$pretso-grey:  #8B98AC !default;
+$light-grey:   #C6CCD8 !default;
+$dark-grey:    #333A45 !default;
+// scss-docs-end color-variables
+
+// scss-docs-start colors-map
+$colors: (
+  "pretso-blue":  $pretso-blue,
+  "gradient":     $gradient,
+  "pretso-orange":$pretso-orange,
+  "normal-green": $normal-green,
+  "error-red":    $error-red,
+  "bg-grey":      $bg-grey,
+  "pretso-grey":  $pretso-grey,
+  "light-grey":   $light-grey,
+  "dark-grey":    $dark-grey,
+) !default;
+// scss-docs-end colors-map
+
+// scss-docs-start theme-color-variables
+$pretso-blue:   $pretso-blue !default;
+$gradient:      $gradient !default;
+$pretso-orange: $pretso-orange !default;
+$normal-green:  $normal-green !default;
+$error-red:     $error-red !default;
+$bg-grey:       $bg-grey !default;
+$pretso-grey:   $pretso-grey !default;
+$light-grey:    $light-grey !default;
+$dark-grey:     $dark-grey !default;
+// scss-docs-end theme-color-variables
+
+// scss-docs-start theme-colors-map
+$theme-colors: (
+  "pretso-blue":  $pretso-blue,
+  "gradient":     $gradient,
+  "pretso-orange":$pretso-orange,
+  "normal-green": $normal-green,
+  "error-red":    $error-red,
+  "bg-grey":      $bg-grey,
+  "pretso-grey":  $pretso-grey,
+  "light-grey":   $light-grey,
+  "dark-grey":    $dark-grey,
+) !default;
+// scss-docs-end theme-colors-map
