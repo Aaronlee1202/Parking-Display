@@ -1,6 +1,6 @@
 <template>
+  <p class="table-name">充電樁狀態</p>
   <div id="Table-Layer">
-    <div class="table-name">充電樁狀態</div>
     <table class="table border-white align-middle">
       <thead>
         <tr>
@@ -48,17 +48,16 @@ export default {
 <style lang="scss" scoped>
 #Table-Layer {
   width: 700px;
-  //   height: 300px;
+  height: 100%;
   //表格置中
   margin-left: auto;
   margin-right: auto;
 }
 .table-name {
   position: relative;
-  left: 8%;
+  padding: 0 0 0 10rem;
   font-weight: 700;
   font-size: 18px;
-  color: var(--bs-dark-grey);
 }
 
 .top-title {
@@ -80,7 +79,6 @@ td {
   height: 50px;
   font-weight: 500;
   text-align: center;
-  color: var(--bs-dark-grey);
   background-color: rgba(198, 204, 216, 0.1) !important;
   //background-color: var(--bs-light-grey) + opacity: 0.1
 }

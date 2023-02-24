@@ -1,59 +1,57 @@
 <template>
-  <div class="fault">
+  <div class="container-fault">
     <div class="row">
-      <div id="Layer" class="col">
-        <div class="parking-name">物業大樓停車場</div>
-        <div class="layer-stack_wrap">
-          <div
-            class="layer-stack_layer layer-stack_layer1"
-            @click="clickLayer(1)"
-          >
+      <div class="col-6 bg-white">
+        <div id="Layer">
+          <p class="parking-name">物業大樓停車場</p>
+          <div class="layer-stack_wrap">
             <div
-              class="arrow-box"
-              :class="[layerSwitch == 1 ? 'arrow-right' : '']"
-            ></div>
-            <h2 :class="[layerSwitch == 1 ? 'click-color' : '']">B3</h2>
-          </div>
-          <div
-            class="layer-stack_layer layer-stack__layer2"
-            @click="clickLayer(2)"
-          >
+              class="layer-stack_layer layer-stack_layer1"
+              @click="clickLayer(1)"
+            >
+              <div
+                class="arrow-box"
+                :class="[layerSwitch == 1 ? 'arrow-right' : '']"
+              ></div>
+              <h2 :class="[layerSwitch == 1 ? 'click-color' : '']">B3</h2>
+            </div>
             <div
-              class="arrow-box"
-              :class="[layerSwitch == 2 ? 'arrow-right' : '']"
-            ></div>
-            <h2 :class="[layerSwitch == 2 ? 'click-color' : '']">B2</h2>
-          </div>
-          <div
-            class="layer-stack_layer layer-stack__layer3"
-            @click="clickLayer(3)"
-          >
+              class="layer-stack_layer layer-stack__layer2"
+              @click="clickLayer(2)"
+            >
+              <div
+                class="arrow-box"
+                :class="[layerSwitch == 2 ? 'arrow-right' : '']"
+              ></div>
+              <h2 :class="[layerSwitch == 2 ? 'click-color' : '']">B2</h2>
+            </div>
             <div
-              class="arrow-box"
-              :class="[layerSwitch == 3 ? 'arrow-right' : '']"
-            ></div>
-            <h2 :class="[layerSwitch == 3 ? 'click-color' : '']">B1</h2>
+              class="layer-stack_layer layer-stack__layer3"
+              @click="clickLayer(3)"
+            >
+              <div
+                class="arrow-box"
+                :class="[layerSwitch == 3 ? 'arrow-right' : '']"
+              ></div>
+              <h2 :class="[layerSwitch == 3 ? 'click-color' : '']">B1</h2>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col"></div>
-    </div>
-    <div class="row">
-      <div class="col bg-white">
         <polesStatus />
       </div>
-      <div class="col"></div>
+      <div class="col-6"><parkingSpace /></div>
     </div>
   </div>
 </template>
 
 <script>
 import polesStatus from "@/components/PolesComponents/polesStatus.vue";
+import parkingSpace from "@/components/PolesComponents/parkingSpace.vue";
 import { ref } from "vue";
 
 export default {
   name: "PolesView",
-  components: { polesStatus },
+  components: { polesStatus, parkingSpace },
   setup() {
     let layerSwitch = ref(0);
     const clickLayer = (event) => {
@@ -70,30 +68,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-// .fault {
-//   height: 100%;
-// }
-.bg-white {
-  height: 100%;
-}
 #Layer {
   width: 600px;
   height: 600px;
-  background-color: #ffffff;
+}
+.bg-white {
+  height: 100vh;
 }
 .parking-name {
   position: relative;
-  top: 7%;
-  left: 14%;
+  padding: 2rem 0 0 10rem;
   font-weight: 700;
   font-size: 18px;
-  color: var(--bs-dark-grey);
 }
 
 .layer-stack_wrap {
   position: relative;
-  top: 45%;
-  left: 25%;
+  margin: 16rem 0 0 14rem;
 }
 
 // 每一層地板
@@ -117,7 +108,7 @@ export default {
 .layer-stack_layer1:hover {
   width: 438.23px;
   height: 239.08px;
-  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.275);
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.15); //rgba(0, 0, 0, 0.275)
   transition: (all 0.15s);
 }
 

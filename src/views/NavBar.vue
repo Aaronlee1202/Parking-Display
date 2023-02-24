@@ -29,7 +29,7 @@
           <span class="nav_link"> Poles </span>
         </div>
       </router-link>
-      <router-link class="" to="/about">
+      <router-link class="" to="/events">
         <div class="nav-list">
           <div class="img-box">
             <svg
@@ -86,7 +86,7 @@ export default {
   width: var(--navbar-weight);
   height: var(--header-height);
   background-color: var(--bs-pretso-blue);
-  cursor: pointer;
+  // cursor: pointer;
   // flex
   display: flex;
   align-items: center;

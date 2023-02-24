@@ -22,10 +22,11 @@ export default {
 }
 
 #app {
-  height: 100%;
+  height: 100vh;
   font-family: "Noto Sans TC", "Microsoft Yahei", "微軟雅黑", sans-serif;
+  color: var(--bs-dark-grey);
   position: relative;
-  margin: var(--header-height) 0 0 var(--navbar-weight);
+  padding: var(--header-height) 0 0 var(--navbar-weight);
   overflow: hidden;
   background-color: rgba(139, 152, 172, 0.1);
   a {
