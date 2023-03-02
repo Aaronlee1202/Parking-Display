@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-6 bg-white">
         <div id="Layer">
-          <p class="parking-name">物業大樓停車場</p>
+          <h1 class="parking-name">物業大樓停車場</h1>
           <div class="layer-stack_wrap">
             <div
               class="layer-stack_layer layer-stack_layer1"
@@ -13,7 +13,12 @@
                 class="arrow-box"
                 :class="[layerSwitch == 1 ? 'arrow-right' : '']"
               ></div>
-              <h2 :class="[layerSwitch == 1 ? 'click-color' : '']">B3</h2>
+              <p
+                class="layerNum"
+                :class="[layerSwitch == 1 ? 'click-color' : '']"
+              >
+                B3
+              </p>
             </div>
             <div
               class="layer-stack_layer layer-stack__layer2"
@@ -23,7 +28,12 @@
                 class="arrow-box"
                 :class="[layerSwitch == 2 ? 'arrow-right' : '']"
               ></div>
-              <h2 :class="[layerSwitch == 2 ? 'click-color' : '']">B2</h2>
+              <p
+                class="layerNum"
+                :class="[layerSwitch == 2 ? 'click-color' : '']"
+              >
+                B2
+              </p>
             </div>
             <div
               class="layer-stack_layer layer-stack__layer3"
@@ -33,7 +43,12 @@
                 class="arrow-box"
                 :class="[layerSwitch == 3 ? 'arrow-right' : '']"
               ></div>
-              <h2 :class="[layerSwitch == 3 ? 'click-color' : '']">B1</h2>
+              <p
+                class="layerNum"
+                :class="[layerSwitch == 3 ? 'click-color' : '']"
+              >
+                B1
+              </p>
             </div>
           </div>
         </div>
@@ -75,11 +90,14 @@ export default {
 .bg-white {
   height: 100vh;
 }
+
 .parking-name {
   position: relative;
   padding: 2rem 0 0 10rem;
+}
+.layerNum {
+  font-size: 2rem;
   font-weight: 700;
-  font-size: 18px;
 }
 
 .layer-stack_wrap {

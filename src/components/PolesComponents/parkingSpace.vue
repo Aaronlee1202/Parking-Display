@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p class="parking-name">B1充電車位</p>
+    <h1 class="parking-name">B1充電車位</h1>
     <div class="parking-img-box">
       <img src="../../assets/polesView/parking.png" alt="" />
     </div>
@@ -8,7 +8,7 @@
       <div class="parking-info-card bg-white">
         <div class="row row-height">
           <div class="col-6">
-            <p class="card-title margin-top">充電車位細項 B1/1</p>
+            <h1 class="card-title margin-top">充電車位細項 B1/1</h1>
             <div class="flex margin-top">
               <span class="info-title">充電樁</span>
               <span class="info-title">:</span>
@@ -68,8 +68,6 @@ export default {
 .parking-name {
   position: relative;
   padding: 2rem 0 0 6rem;
-  font-weight: 700;
-  font-size: 18px;
 }
 
 .parking-img-box {
@@ -103,10 +101,7 @@ export default {
   box-shadow: 0px 10px 13px rgba(17, 38, 146, 0.05);
   border-radius: 12px;
 }
-.card-title {
-  font-size: 18px;
-  font-weight: 700;
-}
+
 .info-title {
   margin: 0 0.2rem 0 0;
   font-weight: 700;

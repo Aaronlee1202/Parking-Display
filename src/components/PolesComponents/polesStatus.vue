@@ -1,5 +1,5 @@
 <template>
-  <p class="table-name">充電樁狀態</p>
+  <h1 class="table-name">充電樁狀態</h1>
   <div id="Table-Layer">
     <table class="table border-white align-middle">
       <thead>
@@ -14,25 +14,24 @@
       <tbody>
         <tr>
           <th scope="row" class="left-title">B1</th>
-          <td>1</td>
-          <td>2</td>
+          <td>6</td>
+          <td>11</td>
           <td class="faulty-color">3</td>
-          <td>4</td>
+          <td>1</td>
         </tr>
         <tr>
           <th scope="row" class="left-title">B2</th>
-          <td>1</td>
+          <td>10</td>
+          <td>7</td>
+          <td class="faulty-color">2</td>
           <td>2</td>
-          <td class="faulty-color">3</td>
-          <td>4</td>
         </tr>
         <tr>
           <th scope="row" class="left-title">B3</th>
-          <!-- <td colspan="2">Larry the Bird</td> -->
-          <td>1</td>
+          <td>15</td>
           <td>2</td>
-          <td class="faulty-color">3</td>
-          <td>4</td>
+          <td class="faulty-color">0</td>
+          <td>1</td>
         </tr>
       </tbody>
     </table>
@@ -56,8 +55,6 @@ export default {
 .table-name {
   position: relative;
   padding: 0 0 0 10rem;
-  font-weight: 700;
-  font-size: 18px;
 }
 
 .top-title {
