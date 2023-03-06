@@ -11,6 +11,14 @@
         <div class="round">3</div>
         <p>如持續亮紅燈,請回報維運工程師</p>
       </div>
+      <div class="btn btn-outline-pretso-blue">
+        <span
+          class="spinner-border spinner-border-sm"
+          role="status"
+          aria-hidden="true"
+        ></span>
+        Normal
+      </div>
     </div>
   </div>
 </template>
