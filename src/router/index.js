@@ -1,12 +1,18 @@
 import { createRouter, createWebHashHistory } from "vue-router";
 import PolesView from "../views/PolesView.vue";
 import EventsView from "../views/EventsView.vue";
+import DesignView from "../views/DesignView.vue";
 
 const routes = [
   {
     path: "/",
     name: "PolesView",
     component: PolesView,
+  },
+  {
+    path: "/designView",
+    name: "DesignView",
+    component: DesignView,
   },
   {
     path: "/events",
