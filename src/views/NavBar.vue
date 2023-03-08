@@ -5,7 +5,7 @@
     </div>
     <div>
       <img src="@/assets/user.svg" alt="" />
-      <a>站點管理員</a>
+      <a class="title2">站點管理員</a>
     </div>
   </header>
   <nav class="left-nav">
@@ -71,15 +71,13 @@ export default {
   align-items: center;
   justify-content: space-between;
   z-index: 10;
-  a {
+  .title2 {
     color: #ffffff;
-    font-size: 14px;
     margin-left: 5px;
-    transition: font-weight 0.1s;
+    // transition: font-weight 0.1s;
   }
-  a:hover {
+  .title2:hover {
     cursor: pointer;
-    font-weight: 500;
   }
 }
 .header_toggle {
