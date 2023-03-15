@@ -16,17 +16,12 @@ export default {
 </script>
 
 <style lang="scss">
-:root {
-  --header-height: 4rem;
-  --navbar-weight: 12rem;
-}
-
 #app {
   height: 100vh;
   font-family: "Noto Sans TC", "Microsoft Yahei", "微軟雅黑", sans-serif;
   color: var(--bs-dark-grey);
   position: relative;
-  padding: var(--header-height) 0 0 var(--navbar-weight);
+  padding: var(--pretso-header-height) 0 0 var(--pretso-navbar-weight);
   overflow: hidden;
   background-color: rgba(139, 152, 172, 0.1);
   a {

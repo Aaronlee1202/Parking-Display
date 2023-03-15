@@ -8,11 +8,13 @@ const routes = [
     path: "/",
     name: "PolesView",
     component: PolesView,
+    props: (route) => ({ query: route.query.id }),
   },
   {
     path: "/designView",
     name: "DesignView",
     component: DesignView,
+    props: (route) => ({ query: route.query.id }),
   },
   {
     path: "/events",
@@ -23,6 +25,7 @@ const routes = [
     //   component: () =>
     //     import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
     component: EventsView,
+    props: (route) => ({ query: route.query.id }),
   },
 ];
 

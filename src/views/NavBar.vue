@@ -1,90 +1,131 @@
 <template>
-  <header class="header" id="header">
-    <div class="header_toggle">
-      <img src="@/assets/pretso.svg" alt="" />
+  <header id="Header-Bar">
+    <div id="Pretso-Logo">
+      <img src="@/assets/pretso.svg" alt="logoIcon" />
     </div>
     <div>
-      <img src="@/assets/user.svg" alt="" />
-      <a class="title2">站點管理員</a>
+      <img src="@/assets/user.svg" alt="userIcon" />
+      <a class="title2 user-name">站點管理員</a>
     </div>
   </header>
-  <nav class="left-nav">
-    <div>
-      <router-link class="" to="/">
-        <div class="nav-list">
-          <div class="img-box">
-            <svg
-              width="18"
-              height="19"
-              viewBox="0 0 18 19"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="icon-color"
-                d="M17.2036 4.465L17.2145 4.45444L13.1564 0.527778L12 1.64667L14.3018 3.87389C13.2764 4.25389 12.5455 5.20389 12.5455 6.33333C12.5455 6.67988 12.616 7.02303 12.7531 7.34319C12.8901 7.66336 13.091 7.95427 13.3443 8.19931C13.8557 8.6942 14.5494 8.97222 15.2727 8.97222C15.6655 8.97222 16.0255 8.88778 16.3636 8.75056V16.3611C16.3636 16.6411 16.2487 16.9095 16.0441 17.1075C15.8395 17.3055 15.5621 17.4167 15.2727 17.4167C14.9834 17.4167 14.7059 17.3055 14.5013 17.1075C14.2968 16.9095 14.1818 16.6411 14.1818 16.3611V11.6111C14.1818 11.0512 13.9519 10.5142 13.5428 10.1183C13.1336 9.72242 12.5787 9.5 12 9.5H10.9091V2.11111C10.9091 1.55121 10.6792 1.01424 10.2701 0.61833C9.86088 0.22242 9.30593 0 8.72727 0H2.18182C1.60316 0 1.04821 0.22242 0.63904 0.61833C0.229869 1.01424 0 1.55121 0 2.11111V19H10.9091V11.0833H12.5455V16.3611C12.5455 17.061 12.8328 17.7322 13.3443 18.2271C13.8557 18.722 14.5494 19 15.2727 19C15.6309 19 15.9855 18.9317 16.3164 18.7991C16.6473 18.6665 16.948 18.4721 17.2012 18.2271C17.4545 17.982 17.6553 17.6911 17.7924 17.371C17.9295 17.0508 18 16.7077 18 16.3611V6.33333C18 5.605 17.6945 4.94 17.2036 4.465ZM15.2727 7.38889C14.9834 7.38889 14.7059 7.27768 14.5013 7.07972C14.2968 6.88177 14.1818 6.61328 14.1818 6.33333C14.1818 6.05338 14.2968 5.7849 14.5013 5.58694C14.7059 5.38899 14.9834 5.27778 15.2727 5.27778C15.5621 5.27778 15.8395 5.38899 16.0441 5.58694C16.2487 5.7849 16.3636 6.05338 16.3636 6.33333C16.3636 6.61328 16.2487 6.88177 16.0441 7.07972C15.8395 7.27768 15.5621 7.38889 15.2727 7.38889ZM4.36364 15.8333V11.0833H2.18182L6.54545 3.16667V8.44444H8.72727L4.36364 15.8333Z"
-              />
-            </svg>
-          </div>
-          <span class="nav_link"> Poles </span>
-        </div>
-      </router-link>
-      <router-link class="" to="/events">
-        <div class="nav-list">
-          <div class="img-box">
-            <svg
-              width="20"
-              height="18"
-              viewBox="0 0 20 18"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                class="icon-color"
-                d="M2.00137 17.0075H17.0614C18.6014 17.0075 19.5614 15.3375 18.7914 14.0075L11.2614 0.9975C10.4914 -0.3325 8.57137 -0.3325 7.80137 0.9975L0.271371 14.0075C-0.498629 15.3375 0.461371 17.0075 2.00137 17.0075ZM9.53137 10.0075C8.98137 10.0075 8.53137 9.5575 8.53137 9.0075V7.0075C8.53137 6.4575 8.98137 6.0075 9.53137 6.0075C10.0814 6.0075 10.5314 6.4575 10.5314 7.0075V9.0075C10.5314 9.5575 10.0814 10.0075 9.53137 10.0075ZM10.5314 14.0075H8.53137V12.0075H10.5314V14.0075Z"
-              />
-            </svg>
-          </div>
-          <span class="nav_link"> Events </span>
-        </div>
-      </router-link>
-    </div>
-    <router-link class="" to="/designView">
-      <div class="nav-list">
+  <nav id="Left-Nav">
+    <router-link :to="{ path: '/', query: { id: 'PolesView' } }">
+      <div
+        class="nav-list"
+        :class="[userClick == 'PolesView' ? 'nav-list-click' : '']"
+      >
         <div class="img-box">
           <svg
+            width="18"
+            height="19"
+            viewBox="0 0 18 19"
+            fill="none"
             xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="currentColor"
-            class="bi bi-filetype-css"
-            viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
-              d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.397 14.841a1.13 1.13 0 0 0 .401.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.656 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357 2.027 2.027 0 0 0-.566-.21l-.621-.144a.97.97 0 0 1-.404-.176.37.37 0 0 1-.144-.299c0-.156.062-.284.185-.384.125-.101.296-.152.512-.152.143 0 .266.023.37.068a.624.624 0 0 1 .246.181.56.56 0 0 1 .12.258h.75a1.092 1.092 0 0 0-.2-.566 1.21 1.21 0 0 0-.5-.41 1.813 1.813 0 0 0-.78-.152c-.293 0-.551.05-.776.15-.225.099-.4.24-.527.421-.127.182-.19.395-.19.639 0 .201.04.376.122.524.082.149.2.27.352.367.152.095.332.167.539.213l.618.144c.207.049.361.113.463.193a.387.387 0 0 1 .152.326.505.505 0 0 1-.085.29.559.559 0 0 1-.255.193c-.111.047-.249.07-.413.07-.117 0-.223-.013-.32-.04a.838.838 0 0 1-.248-.115.578.578 0 0 1-.255-.384h-.765ZM.806 13.693c0-.248.034-.46.102-.633a.868.868 0 0 1 .302-.399.814.814 0 0 1 .475-.137c.15 0 .283.032.398.097a.7.7 0 0 1 .272.26.85.85 0 0 1 .12.381h.765v-.072a1.33 1.33 0 0 0-.466-.964 1.441 1.441 0 0 0-.489-.272 1.838 1.838 0 0 0-.606-.097c-.356 0-.66.074-.911.223-.25.148-.44.359-.572.632-.13.274-.196.6-.196.979v.498c0 .379.064.704.193.976.131.271.322.48.572.626.25.145.554.217.914.217.293 0 .554-.055.785-.164.23-.11.414-.26.55-.454a1.27 1.27 0 0 0 .226-.674v-.076h-.764a.799.799 0 0 1-.118.363.7.7 0 0 1-.272.25.874.874 0 0 1-.401.087.845.845 0 0 1-.478-.132.833.833 0 0 1-.299-.392 1.699 1.699 0 0 1-.102-.627v-.495ZM6.78 15.29a1.176 1.176 0 0 1-.111-.449h.764a.578.578 0 0 0 .255.384c.07.049.154.087.25.114.095.028.201.041.319.041.164 0 .301-.023.413-.07a.559.559 0 0 0 .255-.193.507.507 0 0 0 .085-.29.387.387 0 0 0-.153-.326c-.101-.08-.256-.144-.463-.193l-.618-.143a1.72 1.72 0 0 1-.539-.214 1 1 0 0 1-.351-.367 1.068 1.068 0 0 1-.123-.524c0-.244.063-.457.19-.639.127-.181.303-.322.527-.422.225-.1.484-.149.777-.149.304 0 .564.05.779.152.217.102.384.239.5.41.12.17.187.359.2.566h-.75a.56.56 0 0 0-.12-.258.624.624 0 0 0-.246-.181.923.923 0 0 0-.37-.068c-.216 0-.387.05-.512.152a.472.472 0 0 0-.184.384c0 .121.047.22.143.3a.97.97 0 0 0 .404.175l.621.143c.217.05.406.12.566.211.16.09.285.21.375.358.09.148.135.335.135.56 0 .247-.063.466-.188.656a1.216 1.216 0 0 1-.539.439c-.234.105-.52.158-.858.158-.254 0-.476-.03-.665-.09a1.404 1.404 0 0 1-.478-.252 1.13 1.13 0 0 1-.29-.375Z"
+              class="icon-color"
+              d="M17.2036 4.465L17.2145 4.45444L13.1564 0.527778L12 1.64667L14.3018 3.87389C13.2764 4.25389 12.5455 5.20389 12.5455 6.33333C12.5455 6.67988 12.616 7.02303 12.7531 7.34319C12.8901 7.66336 13.091 7.95427 13.3443 8.19931C13.8557 8.6942 14.5494 8.97222 15.2727 8.97222C15.6655 8.97222 16.0255 8.88778 16.3636 8.75056V16.3611C16.3636 16.6411 16.2487 16.9095 16.0441 17.1075C15.8395 17.3055 15.5621 17.4167 15.2727 17.4167C14.9834 17.4167 14.7059 17.3055 14.5013 17.1075C14.2968 16.9095 14.1818 16.6411 14.1818 16.3611V11.6111C14.1818 11.0512 13.9519 10.5142 13.5428 10.1183C13.1336 9.72242 12.5787 9.5 12 9.5H10.9091V2.11111C10.9091 1.55121 10.6792 1.01424 10.2701 0.61833C9.86088 0.22242 9.30593 0 8.72727 0H2.18182C1.60316 0 1.04821 0.22242 0.63904 0.61833C0.229869 1.01424 0 1.55121 0 2.11111V19H10.9091V11.0833H12.5455V16.3611C12.5455 17.061 12.8328 17.7322 13.3443 18.2271C13.8557 18.722 14.5494 19 15.2727 19C15.6309 19 15.9855 18.9317 16.3164 18.7991C16.6473 18.6665 16.948 18.4721 17.2012 18.2271C17.4545 17.982 17.6553 17.6911 17.7924 17.371C17.9295 17.0508 18 16.7077 18 16.3611V6.33333C18 5.605 17.6945 4.94 17.2036 4.465ZM15.2727 7.38889C14.9834 7.38889 14.7059 7.27768 14.5013 7.07972C14.2968 6.88177 14.1818 6.61328 14.1818 6.33333C14.1818 6.05338 14.2968 5.7849 14.5013 5.58694C14.7059 5.38899 14.9834 5.27778 15.2727 5.27778C15.5621 5.27778 15.8395 5.38899 16.0441 5.58694C16.2487 5.7849 16.3636 6.05338 16.3636 6.33333C16.3636 6.61328 16.2487 6.88177 16.0441 7.07972C15.8395 7.27768 15.5621 7.38889 15.2727 7.38889ZM4.36364 15.8333V11.0833H2.18182L6.54545 3.16667V8.44444H8.72727L4.36364 15.8333Z"
             />
           </svg>
         </div>
-        <span class="nav_link"> DesignView </span>
+        <span class="nav_link title1"> Poles </span>
       </div>
     </router-link>
+    <router-link :to="{ path: '/events', query: { id: 'EventsView' } }">
+      <div
+        class="nav-list"
+        :class="[userClick == 'EventsView' ? 'nav-list-click' : '']"
+      >
+        <div class="img-box">
+          <svg
+            width="20"
+            height="18"
+            viewBox="0 0 20 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              class="icon-color"
+              d="M2.00137 17.0075H17.0614C18.6014 17.0075 19.5614 15.3375 18.7914 14.0075L11.2614 0.9975C10.4914 -0.3325 8.57137 -0.3325 7.80137 0.9975L0.271371 14.0075C-0.498629 15.3375 0.461371 17.0075 2.00137 17.0075ZM9.53137 10.0075C8.98137 10.0075 8.53137 9.5575 8.53137 9.0075V7.0075C8.53137 6.4575 8.98137 6.0075 9.53137 6.0075C10.0814 6.0075 10.5314 6.4575 10.5314 7.0075V9.0075C10.5314 9.5575 10.0814 10.0075 9.53137 10.0075ZM10.5314 14.0075H8.53137V12.0075H10.5314V14.0075Z"
+            />
+          </svg>
+        </div>
+        <span class="nav_link title1"> Events </span>
+      </div>
+    </router-link>
+    <div
+      class="nav-list"
+      :class="[userClick == 'DesignView' ? 'nav-list-click' : '']"
+      data-bs-toggle="collapse"
+      data-bs-target="#nav-collapse"
+      aria-expanded="false"
+      aria-controls="nav-collapse"
+    >
+      <div class="img-box"></div>
+      <span class="nav_link title1"> DesignView </span>
+      <div class="nav-arrow-box">
+        <svg
+          width="10"
+          height="5"
+          viewBox="0 0 10 5"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path class="icon-color" d="M5 5L0 0H10L5 5Z" />
+        </svg>
+      </div>
+    </div>
+    <div class="collapse" id="nav-collapse">
+      <router-link :to="{ path: '/designView', query: { id: 'DesignView' } }">
+        <div
+          class="nav-list"
+          :class="[userClick == 'DesignView' ? 'nav-list-click' : '']"
+        >
+          <div class="img-box"></div>
+          <span class="nav_link title1"> Typography </span>
+        </div>
+      </router-link>
+      <router-link to="/events">
+        <div class="nav-list">
+          <div class="img-box"></div>
+          <span class="nav_link title1"> Events </span>
+        </div>
+      </router-link>
+    </div>
   </nav>
 </template>
 <script>
+import { ref, watch, computed } from "vue";
+import { useRoute } from "vue-router";
+
 export default {
   name: "NavBar",
+  setup() {
+    const route = useRoute();
+    let routeQuery = computed(() => route.query);
+    let userClick = ref();
+
+    watch(
+      () => routeQuery.value,
+      (value) => {
+        userClick.value = value.id;
+        console.log(userClick.value);
+      }
+    );
+
+    return { userClick };
+  },
 };
 </script>
 
 <style lang="scss" scoped>
-#header {
+#Header-Bar {
   width: 100%;
-  height: var(--header-height);
+  height: var(--pretso-header-height);
   position: fixed;
   top: 0;
   left: 0;
-  padding-right: var(--header-height);
+  padding-right: var(--pretso-header-height);
   background-color: var(--bs-dark-grey);
   // flex
   display: flex;
@@ -100,9 +141,9 @@ export default {
     cursor: pointer;
   }
 }
-.header_toggle {
-  width: var(--navbar-weight);
-  height: var(--header-height);
+#Pretso-Logo {
+  width: var(--pretso-navbar-weight);
+  height: var(--pretso-header-height);
   background-color: var(--bs-pretso-blue);
   // cursor: pointer;
   // flex
@@ -111,52 +152,20 @@ export default {
   justify-content: center;
 }
 
-.left-nav {
-  width: var(--navbar-weight);
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: var(--header-height) 0 0 0;
-  background-color: #ffffff;
-  box-shadow: 0px 4px 20px rgba(92, 113, 154, 0.07);
-  z-index: 9;
-  overflow: hidden;
-}
-
-.nav-list {
-  width: 100%;
-  height: 70px;
-  padding: 0 0 0 3rem;
-  // flex
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
-.nav-list {
-  .nav_link {
-    color: var(--bs-light-grey);
-  }
-  .icon-color {
-    fill: var(--bs-light-grey);
-  }
-}
-.nav-list:hover {
-  background-color: var(--bs-bg-grey);
-  .nav_link {
-    color: var(--bs-pretso-blue);
-  }
-  .icon-color {
-    fill: var(--bs-pretso-blue);
-  }
-}
-
 .img-box {
   width: 26px;
   height: 23px;
+  margin-right: 1.063rem;
   // flex
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.nav-arrow-box {
+  // width: 100%;
+  height: 23px;
+  // flex
+  display: flex;
+  align-items: center;
 }
 </style>
